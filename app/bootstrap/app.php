@@ -35,6 +35,7 @@ return [
     */
     
     'routes' => _merge_recursive([
+        require MPPHP_ROOT . 'src/routes.php',
         //
     ])
 ];

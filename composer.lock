@@ -1,0 +1,112 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "49fc7371dac2f478fae9f3c4d6f9256e",
+    "packages": [
+        {
+            "name": "mpphp/router",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mpphp/router.git",
+                "reference": "ef82b2c911b7c0648318a9af21e695a8b0b71bf8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mpphp/router/zipball/ef82b2c911b7c0648318a9af21e695a8b0b71bf8",
+                "reference": "ef82b2c911b7c0648318a9af21e695a8b0b71bf8",
+                "shasum": ""
+            },
+            "require": {
+                "mpphp/support": "dev-master",
+                "php": "^7.1"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "router.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anitche Chisom",
+                    "email": "anitchec.dev@gmail.com"
+                }
+            ],
+            "description": "MPPHP Router library.",
+            "homepage": "https://mpphp.github.io/mpphp/",
+            "keywords": [
+                "MpPHP",
+                "framework",
+                "php",
+                "procedural"
+            ],
+            "time": "2019-03-26T19:54:54+00:00"
+        },
+        {
+            "name": "mpphp/support",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mpphp/support.git",
+                "reference": "2dc48986c3e1677b0cf15ca0280b3c852d14baa7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mpphp/support/zipball/2dc48986c3e1677b0cf15ca0280b3c852d14baa7",
+                "reference": "2dc48986c3e1677b0cf15ca0280b3c852d14baa7",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "functions/array.php",
+                    "functions/string.php",
+                    "functions/utils.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anitche Chisom",
+                    "email": "anitchec.dev@gmail.com"
+                }
+            ],
+            "description": "MPPHP support functions.",
+            "homepage": "https://mpphp.github.io/mpphp/",
+            "keywords": [
+                "MpPHP",
+                "functions",
+                "helpers",
+                "php"
+            ],
+            "time": "2019-03-26T12:41:38+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "mpphp/support": 20,
+        "mpphp/router": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": "^7.1"
+    },
+    "platform-dev": []
+}

@@ -7,12 +7,14 @@
     "homepage": "https://mpphp.github.io/mpphp/",
     "authors": [
         {
-            "name": "tsommie",
+            "name": "Anitche Chisom",
             "email": "anitchec.dev@gmail.com"
         }
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": "^7.1"
+        "php": "^7.1",
+        "mpphp/support": "dev-master",
+        "mpphp/router": "dev-master"
     }
 }
