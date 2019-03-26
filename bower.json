@@ -1,0 +1,23 @@
+{
+    "name": "mpphp",
+    "authors": [
+      "Anitche Chisom <anitchec.dev@gmail.com>"
+    ],
+    "description": "Micro Procedural PHP Framework",
+    "keywords": [
+      "PHP",
+      "Procedural",
+      "Framework"
+    ],
+    "license": "MIT",
+    "homepage": "https://mpphp.github.io/mpphp/",
+    "private": true,
+    "ignore": [
+      "**/.*",
+      "node_modules",
+      "web/bower_components",
+      "test",
+      "tests"
+    ]
+}
+  
