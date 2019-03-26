@@ -15,3 +15,14 @@ define('MPPHP_ROOT', __DIR__. '/');
 */
 
 require MPPHP_ROOT . 'vendor/autoload.php';
+
+/*
+|--------------------------------------------------------------------------
+| Connect to the bootstrap file
+|--------------------------------------------------------------------------
+|
+| This gives us a single entry point into our entire application.
+|
+*/
+
+$app = require MPPHP_ROOT . 'app/bootstrap/app.php';
