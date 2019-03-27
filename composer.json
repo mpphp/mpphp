@@ -15,6 +15,7 @@
     "require": {
         "php": "^7.1",
         "mpphp/support": "dev-master",
-        "mpphp/router": "dev-master"
+        "mpphp/router": "dev-master",
+        "mpphp/view": "dev-master"
     }
 }
