@@ -1,0 +1,158 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "66e839a75fa84727901f899e58eb9293",
+    "packages": [
+        {
+            "name": "mpphp/router",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mpphp/router.git",
+                "reference": "ef82b2c911b7c0648318a9af21e695a8b0b71bf8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mpphp/router/zipball/ef82b2c911b7c0648318a9af21e695a8b0b71bf8",
+                "reference": "ef82b2c911b7c0648318a9af21e695a8b0b71bf8",
+                "shasum": ""
+            },
+            "require": {
+                "mpphp/support": "dev-master",
+                "php": "^7.1"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "router.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anitche Chisom",
+                    "email": "anitchec.dev@gmail.com"
+                }
+            ],
+            "description": "MPPHP Router library.",
+            "homepage": "https://mpphp.github.io/mpphp/",
+            "keywords": [
+                "MpPHP",
+                "framework",
+                "php",
+                "procedural"
+            ],
+            "time": "2019-03-26T19:54:54+00:00"
+        },
+        {
+            "name": "mpphp/support",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mpphp/support.git",
+                "reference": "b8acfb48bb7c3182dc59debacb3cfb96a11b015b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mpphp/support/zipball/b8acfb48bb7c3182dc59debacb3cfb96a11b015b",
+                "reference": "b8acfb48bb7c3182dc59debacb3cfb96a11b015b",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "functions/array.php",
+                    "functions/string.php",
+                    "functions/utils.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anitche Chisom",
+                    "email": "anitchec.dev@gmail.com"
+                }
+            ],
+            "description": "MPPHP support functions.",
+            "homepage": "https://mpphp.github.io/mpphp/",
+            "keywords": [
+                "MpPHP",
+                "functions",
+                "helpers",
+                "php"
+            ],
+            "time": "2019-03-27T13:40:39+00:00"
+        },
+        {
+            "name": "mpphp/view",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mpphp/veiw.git",
+                "reference": "a7c268dd5c18ba4d9771c5888faf1dace3749ade"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mpphp/veiw/zipball/a7c268dd5c18ba4d9771c5888faf1dace3749ade",
+                "reference": "a7c268dd5c18ba4d9771c5888faf1dace3749ade",
+                "shasum": ""
+            },
+            "require": {
+                "mpphp/support": "dev-master",
+                "php": "^7.1"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "view.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anitche Chisom",
+                    "email": "anitchec.dev@gmail.com"
+                }
+            ],
+            "description": "MPPHP view library.",
+            "homepage": "https://mpphp.github.io/mpphp/",
+            "keywords": [
+                "MpPHP",
+                "framework",
+                "php",
+                "procedural",
+                "view"
+            ],
+            "time": "2019-03-27T13:29:43+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "mpphp/support": 20,
+        "mpphp/router": 20,
+        "mpphp/view": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": "^7.1"
+    },
+    "platform-dev": []
+}
