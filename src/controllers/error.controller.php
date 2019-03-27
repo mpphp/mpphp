@@ -7,5 +7,5 @@
  */
 function pageNotFoundAction()
 {
-    return print 'Error';
+    return __view('404');
 }

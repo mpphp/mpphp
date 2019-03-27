@@ -7,5 +7,5 @@
  */
 function indexAction()
 {
-    print "Hello World!";
+    return __view('welcome');
 }
