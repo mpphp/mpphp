@@ -1,6 +1,14 @@
 <?php
 
-define('MPPHP_ROOT', __DIR__. '/');
+/**
+ * MpPHP - Micro Procedural PHP Framework
+ *
+ * @package  MpPHP
+ * @author   Anitche Chisom <anitchec.dev@gmail.com>
+ */
+
+ 
+define('MPPHP_ROOT', __DIR__. '/../');
 
 /*
 |--------------------------------------------------------------------------
@@ -25,16 +33,17 @@ require MPPHP_ROOT . 'vendor/autoload.php';
 |
 */
 
-$app = require MPPHP_ROOT . 'app/bootstrap/app.php';
+$app = require MPPHP_ROOT . 'bootstrap/app.php';
 
 /*
 |--------------------------------------------------------------------------
-| Rout Our Clients Request
+| Run The Application
 |--------------------------------------------------------------------------
 |
 | Once we have the application, we can handle the incoming request
 | through the router, and send the associated response back to
-| the client's browser.
+| the client's browser allowing them to enjoy the creative
+| and wonderful application we have prepared for them.
 |
 */
 
