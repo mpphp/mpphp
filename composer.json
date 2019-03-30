@@ -17,5 +17,10 @@
         "mpphp/support": "dev-master",
         "mpphp/router": "dev-master",
         "mpphp/view": "dev-master"
+    },
+    "autoload": {
+        "files": [
+            ".env.php"
+        ]
     }
 }

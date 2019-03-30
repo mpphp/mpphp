@@ -13,7 +13,7 @@ return [
         |
         */
 
-        'name' => 'Micro Procedural PHP',
+        'name' => _env('APP_NAME', 'MpPHP'),
 
         /*
         |--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ return [
         |
         */
 
-        'url' => 'http://localhost:4000',
+        'url' => _env('APP_URL', 'http://localhost:4000'),
 
         /*
         |--------------------------------------------------------------------------
@@ -50,6 +50,6 @@ return [
         |
         */
         
-        'views' => MPPHP_ROOT . 'web/views',
+        'views' => MPPHP_ROOT . 'resources/views',
     ]
 ];
