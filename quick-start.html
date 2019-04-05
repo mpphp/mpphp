@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap 4 project documentation theme for developers</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">  
+      
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    
+</head> 
+
+<body class="landing-page">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="index.html">
+                            <span aria-hidden="true" class="icon_documents_alt icon"></span>
+                            <span class="text-highlight">MpPHP</span><span class="text-bold">Docs</span>
+                        </a>
+                    </h1>
+                    
+                </div><!--//branding-->
+                
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Quick Start</li>
+                </ol>
+                
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper">
+            <div class="container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title"><i class="icon fa fa-paper-plane"></i> Quick Start</h1>
+                    <div class="meta"><i class="far fa-clock"></i> Last updated: April 5th, 2019</div>
+                </div><!--//doc-header-->
+                <div class="doc-body row">
+                    <div class="doc-content col-md-9 col-12 order-1">
+                        <div class="content-inner">
+                            <section id="setup-section" class="doc-section">
+                                <h2 class="section-title">Setup</h2>
+                                <div class="section-block">
+                                    <p>
+                                        To create your new MpPHP application, first make sure you're using PHP 7.1 or 
+                                        higher and have Composer installed. If you don't, start by <a href="https://getcomposer.org/doc/00-intro.md" title="Composer">installing Composer</a> globally on your system.
+                                        If you want to use an all-in-one setup for your development environment, check out <a href="http://www.wampserver.com/" title="Wampserver">Wampserver</a> if your on windows.
+                                    </p>
+                                    <div id="installation"  class="section-block">
+                                        <h3 class="block-title">Installation</h3>
+                                        
+                                        <p>
+                                            Create your new project by running:
+                                        </p>
+                                        <p><code>$ composer create-project mpphp/mpphp my-project</code></p>
+                                        <p>
+                                            This will create a new my-project directory, download some dependencies into it and even generate the basic directories and files you'll need to get started. In other words, your new app is ready!
+                                        </p>
+                                    </div><!--//section-block-->
+                                    <div id="running-your-mpphp-application"  class="section-block">
+                                        <h3 class="block-title">Running your MpPHP Application</h3>
+                                        
+                                        <p>
+                                            On production, you should use a web server like Nginx or Apache. 
+                                            But for development, it's convenient to use the PHP's built ins web server.
+                                        </p>
+                                        <p>Move into your new project and start the server:</p>
+                                        <div class="code-block">
+                                            <p><code>$ cd my-project</code></p>
+                                            <p><code>$ php -S localhost:4000 -t public</code></p>
+                                        </div><!--//code-block-->
+                                        <p>
+                                            Open your browser and navigate to http://localhost:4000/. 
+                                            If everything is working, you'll see a welcome page. 
+                                        </p>
+                                        <p>
+                                            <img class="img-fluid" src="assets/images/demo/welcome-page.png" alt="IMpPHP welcome page" />
+                                        </p>
+                                        <p>
+                                                Later, when you are finished working, stop the server by pressing Ctrl+C from your terminal.
+                                        </p>
+                                    </div><!--//section-block-->
+                                    <div id="storing-your-project-in-git" class="section-block">
+                                        <h3 class="block-title">Storing your Project in git</h3>
+                                        
+                                        <p>
+                                            Storing your project in services like GitHub, GitLab and Bitbucket works like with any other code project! 
+                                            First you need to have <a href="https://git-scm.com/downloads" title="Install git">git installed</a> on your system.
+                                            Init a new repository with Git and you are ready to push to your remote:
+                                        </p>
+                                        <p>From within your project directory run:</p>
+                                        <div class="code-block">
+                                            <p><code>$ git init</code></p>
+                                            <p><code>$ git add .</code></p>
+                                            <p><code>$ git commit -m "Initial commit"</code></p>
+                                        </div><!--//code-block-->
+                                        <p>
+                                            Your project already has a sensible .gitignore file. And as you install more packages.
+                                            For more on git visit the git documentation
+                                        </p>
+                                    </div><!--//section-block-->
+                                </div>
+                            </section><!--//doc-section-->
+                        </div><!--//content-inner-->
+                    </div><!--//doc-content-->
+
+                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+                        <div id="doc-nav" class="doc-nav">
+	                        
+	                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+	                                <a class="nav-link scrollto" href="#setup-section">Setup</a>
+                                    <nav class="doc-sub-menu nav flex-column">
+                                        <a class="nav-link scrollto" href="#installation" title="MpPHP Installation">Installation</a>
+                                        <a class="nav-link scrollto" href="#running-your-mpphp-application" title="Running your MpPHP Application">Running your MpPHP Application</a>
+                                        <a class="nav-link scrollto" href="#storing-your-project-in-git" title="Storing your Project in git">Storing your Project in git</a>
+                                    </nav><!--//nav-->
+	                            </nav><!--//doc-menu-->
+	                        
+                        </div>
+                    </div><!--//doc-sidebar-->
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+        
+        
+    </div><!--//page-wrapper-->
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+            <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
+            
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+     
+    <!-- Main Javascript -->          
+    <script type="text/javascript" src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>    
+    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>      
+    <script type="text/javascript" src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>                                                             
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    
+</body>
+</html> 
+

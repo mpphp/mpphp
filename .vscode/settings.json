@@ -1,0 +1,15 @@
+{
+    "sqltools.connections": [
+        {
+            "askForPassword": false,
+            "connectionTimeout": 30,
+            "database": "mpphp",
+            "dialect": "MySQL",
+            "name": "mpphp",
+            "password": "Nutyability1",
+            "port": 3306,
+            "server": "127.0.0.1",
+            "username": "tsommie"
+        }
+    ]
+}

@@ -85,9 +85,9 @@ code {
 }
 
 .btn-primary, a.btn-primary {
-  background: #40babd;
-  border: 1px solid #40babd;
-  color: #fff !important;
+  background: #212529;
+  border: 1px solid #212529;
+  color: #f88c30 !important;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .btn-primary.hover, a.btn-primary:hover, a.btn-primary:focus, a.btn-primary:active, a.btn-primary.active, a.btn-primary.hover {
@@ -238,9 +238,9 @@ select {
 
 /* ====== Header ====== */
 .header {
-  background: #494d55;
+  background: #212529;
   color: rgba(255, 255, 255, 0.85);
-  border-top: 5px solid #40babd;
+  border-top: 5px solid #616670;
   padding: 30px 0;
 }
 
@@ -268,7 +268,7 @@ select {
 }
 
 .branding .text-highlight {
-  color: #40babd;
+  color: #f88c30;
 }
 
 .body-green .branding .text-highlight {
@@ -302,7 +302,7 @@ select {
 
 .branding .icon {
   font-size: 24px;
-  color: #40babd;
+  color: #616670;
 }
 
 .body-green .branding .icon {
@@ -435,7 +435,7 @@ select {
 }
 
 .doc-header .doc-title {
-  color: #40babd;
+  color: #212529;
   margin-top: 0;
   font-size: 36px;
 }
@@ -1202,7 +1202,7 @@ select {
 
 /* ======= Landing Page ======= */
 .landing-page .header {
-  background: #494d55;
+  background: #212529;
   color: rgba(255, 255, 255, 0.85);
   padding: 60px 0;
 }
@@ -1229,7 +1229,7 @@ select {
 
 .landing-page .branding .icon {
   font-size: 32px;
-  color: #40babd;
+  color: #616670;
 }
 
 .landing-page .tagline {
