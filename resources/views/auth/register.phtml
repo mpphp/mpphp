@@ -1,0 +1,79 @@
+<?php view__extends('layouts/app')?>
+
+<?php function content() { ?>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Register</div>
+
+                    <div class="card-body">
+                        <form method="POST" action="<?= _route('/register') ?>">
+                           
+                            <div class="form-group row">
+                                <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
+
+                                <div class="col-md-6">
+                                    <input id="name" type="text" class="form-control<?= _errors('name') ? ' is-invalid' : '' ?>" 
+                                    name="name" value="<?= _old('name') ?>" required autofocus>
+
+                                    <?php if (_errors('name')) { ?>
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong><?= _errors('name') ?></strong>
+                                        </span>
+                                    <?php } ?>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="email" class="col-md-4 col-form-label text-md-right">Email Address</label>
+
+                                <div class="col-md-6">
+                                    <input id="email" type="email" class="form-control<?= _errors('email') ? ' is-invalid' : '' ?>" 
+                                    name="email" value="<?= _old('email') ?>" required>
+
+                                    <?php if (_errors('email')) { ?>
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong><?= _errors('email') ?></strong>
+                                        </span>
+                                    <?php } ?>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+
+                                <div class="col-md-6">
+                                    <input id="password" type="password" class="form-control<?= _errors('password') ? ' is-invalid' : '' ?>" 
+                                    name="password" required>
+
+                                    <?php if (_errors('password')) { ?>
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong><?= _errors('password') ?></strong>
+                                        </span>
+                                    <?php } ?>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Confirm password</label>
+
+                                <div class="col-md-6">
+                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row mb-0">
+                                <div class="col-md-6 offset-md-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        Register
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php } ?>

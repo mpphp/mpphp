@@ -12,15 +12,70 @@
 */
 
 return [
-    // Route "/index"
-    'index' => [
-        'controller'    => 'index',
-        'action'        => 'index'
-    ],
+    'web' => [
+        // Route "/index"
+        'index' => 'welcome',
 
-    // Route "/page-not-found"
-    'page-not-found' => [
-        'controller'    => 'error',
-        'action'        => 'pageNotFound'
+        // Route "/page-not-found"
+        'page-not-found' => '404',
+
+        // Route "/home"
+        'home' => [
+            'controller'    => 'home',
+            'middleware'    => [
+                'before' => [
+                    MPPHP_ROOT . 'app/http/middleware/authentication.middleware.php'
+                ]
+            ]
+        ],
+
+        // Route "/login"
+        'logout' => [
+            'controller' => 'auth/login',
+            'action' => 'logout',
+            'middleware'    => [
+                'before' => [
+                    MPPHP_ROOT . 'app/http/middleware/authentication.middleware.php'
+                ]
+            ]
+        ],
+
+        // Route "/register"
+        'register' => [
+            'controller' => 'auth/register',
+            'action' => _request_action([
+                'GET' => 'showRegistrationForm',
+                'POST' => 'register'
+            ]),
+            'middleware'    => [
+                'before' => [
+                    MPPHP_ROOT . 'app/http/middleware/guest.middleware.php',
+                    MPPHP_ROOT . 'app/http/middleware/connectDatabase.middleware.php'
+                ],
+
+                'after' => [
+                    MPPHP_ROOT . 'app/http/middleware/disconnectDatabase.middleware.php'
+                ]
+            ]
+        ],
+
+        // Route "/login"
+        'login' => [
+            'controller' => 'auth/login',
+            'action' => _request_action([
+                'GET' => 'showLoginForm',
+                'POST' => 'login'
+            ]),
+            'middleware'    => [
+                'before' => [
+                    MPPHP_ROOT . 'app/http/middleware/guest.middleware.php',
+                    MPPHP_ROOT . 'app/http/middleware/connectDatabase.middleware.php'
+                ],
+
+                'after' => [
+                    MPPHP_ROOT . 'app/http/middleware/disconnectDatabase.middleware.php'
+                ]
+            ]
+        ]
     ]
 ];
