@@ -28,6 +28,10 @@ $app = mpphp_application(
     [
         require MPPHP_ROOT . 'routes/web.php',
         //
+    ],
+
+    [
+        require MPPHP_ROOT . 'app/http/kernel.php'
     ]
 );
 

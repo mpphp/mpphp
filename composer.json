@@ -16,7 +16,9 @@
         "php": "^7.1",
         "mpphp/support": "dev-master",
         "mpphp/router": "dev-master",
-        "mpphp/view": "dev-master"
+        "mpphp/view": "dev-master",
+        "mpphp/database": "dev-master",
+        "mpphp/validation": "dev-master"
     },
     "autoload": {
         "files": [

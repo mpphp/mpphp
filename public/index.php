@@ -47,4 +47,4 @@ $app = require MPPHP_ROOT . 'bootstrap/app.php';
 |
 */
 
-_router($app['routes'], $app['controllers']);
+_router($app['routes'], $app['controllers'], $app['middleware']);
