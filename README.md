@@ -21,4 +21,5 @@ Did i mention that the fun part of a Framework is having over 60% of the coding 
 
 And for the pros reading this and thinking “MVC, Middleware...with procedural code? This dude must be on that ssshhhhh”. Well, why don't you let me amuse you for a bit.
 
-# Documentation coming real soon...
+# Documentation
+Documentation is available but still under major construction at https://mpphp.github.io/mpphp/index.html
