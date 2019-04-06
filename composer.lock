@@ -4,8 +4,44 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "66e839a75fa84727901f899e58eb9293",
+    "content-hash": "e099a4b2c7f488ce568e56b548f3b119",
     "packages": [
+        {
+            "name": "mpphp/database",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mpphp/database.git",
+                "reference": "05cf69a8a453025b732a6b1030394f730872e6e1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mpphp/database/zipball/05cf69a8a453025b732a6b1030394f730872e6e1",
+                "reference": "05cf69a8a453025b732a6b1030394f730872e6e1",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "database.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "tsommie",
+                    "email": "anitchec.dev@gmail.com"
+                }
+            ],
+            "description": "MPPHP database library",
+            "time": "2019-04-02T19:28:47+00:00"
+        },
         {
             "name": "mpphp/router",
             "version": "dev-master",
@@ -56,12 +92,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mpphp/support.git",
-                "reference": "f9c02234d024194b14e36a284d58cab9b7fbac7d"
+                "reference": "e1a3f14d27290c38c643b627a01c73c0dff34fda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mpphp/support/zipball/f9c02234d024194b14e36a284d58cab9b7fbac7d",
-                "reference": "f9c02234d024194b14e36a284d58cab9b7fbac7d",
+                "url": "https://api.github.com/repos/mpphp/support/zipball/e1a3f14d27290c38c643b627a01c73c0dff34fda",
+                "reference": "e1a3f14d27290c38c643b627a01c73c0dff34fda",
                 "shasum": ""
             },
             "require": {
@@ -95,7 +131,40 @@
                 "helpers",
                 "php"
             ],
-            "time": "2019-04-02T11:41:14+00:00"
+            "time": "2019-04-06T11:50:53+00:00"
+        },
+        {
+            "name": "mpphp/validation",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mpphp/validation.git",
+                "reference": "57d5593888d773051884e11534b2319950f4e6a5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mpphp/validation/zipball/57d5593888d773051884e11534b2319950f4e6a5",
+                "reference": "57d5593888d773051884e11534b2319950f4e6a5",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "validation.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anitche Chisom",
+                    "email": "anitchec.dev@gmail.com"
+                }
+            ],
+            "description": "MpPHP form validation library",
+            "time": "2019-04-05T23:26:29+00:00"
         },
         {
             "name": "mpphp/view",
@@ -149,7 +218,9 @@
     "stability-flags": {
         "mpphp/support": 20,
         "mpphp/router": 20,
-        "mpphp/view": 20
+        "mpphp/view": 20,
+        "mpphp/database": 20,
+        "mpphp/validation": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

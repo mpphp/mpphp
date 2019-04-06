@@ -35,6 +35,4 @@ $app = mpphp_application(
     ]
 );
 
-_dump($app);
-
 return $app;

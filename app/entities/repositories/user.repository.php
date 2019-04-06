@@ -25,8 +25,9 @@ function authenticate_user(): void
 
     // If a user is not found we should redirect back with an error message
     _redirect_back_else($user, [
-        'errors' => ['Please provide a valid email and password']
-        ]);
+            'errors' => ['Please provide a valid email and password']
+        ]
+    );
 
     // Compare the password of the user returned from the data base 
     // with the password submitted by the user trying to login
@@ -40,8 +41,9 @@ function authenticate_user(): void
     // match is the same error message sent back if a user with the
     // provided email does not exist.
     _redirect_back_if($compare_password, [
-        'errors' => ['Please provide a valid email and password']
-        ]);
+            'errors' => ['Please provide a valid email and password']
+        ]
+    );
 
     // If all goes fine and well then we should log the user in.
     login_user($user);
@@ -82,6 +84,7 @@ function logout_user(): void
     // Destroy session 
     session_destroy();
 
+    // Redirect back to the index page.
     _redirect('/');
 }
 
@@ -92,20 +95,24 @@ function logout_user(): void
  */
 function register_new_user()
 {
+    // alidate the data submited by our user
     $result = _validation([
         'name' => 'required|string|max:255',
         'email' => 'required|string|email|unique:users',
         'password' => 'required|string|equals:password_confirmation'
     ]);
 
+    // Get the validated data.
     $validated = $result['validated'];
 
+    // Create the user
     $user = create_new_user(
         $validated['name'],
         $validated['email'],
         $validated['password']
     );
 
-    return login_user($user);
+    // log the user in
+    login_user($user);
 }
 

@@ -14,11 +14,11 @@
     "minimum-stability": "dev",
     "require": {
         "php": "^7.1",
-        "mpphp/database": "dev-master",
         "mpphp/support": "dev-master",
         "mpphp/router": "dev-master",
-        "mpphp/validation": "dev-master",
-        "mpphp/view": "dev-master"
+        "mpphp/view": "dev-master",
+        "mpphp/database": "dev-master",
+        "mpphp/validation": "dev-master"
     },
     "autoload": {
         "files": [
