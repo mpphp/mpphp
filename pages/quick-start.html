@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>MpPHP Official Documentation - Quick Start</title>
+    <title>Quick Start - MpPHP Official Documentation</title>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -45,6 +45,7 @@
                 
             </div><!--//container-->
         </header><!--//header-->
+
         <div class="doc-wrapper">
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
@@ -62,6 +63,7 @@
                                         higher and have Composer installed. If you don't, start by <a href="https://getcomposer.org/doc/00-intro.md" title="Composer">installing Composer</a> globally on your system.
                                         If you want to use an all-in-one setup for your development environment, check out <a href="http://www.wampserver.com/" title="Wampserver">Wampserver</a> if your on windows.
                                     </p>
+
                                     <div id="installation"  class="section-block">
                                         <h3 class="block-title">Installation</h3>
                                         
@@ -73,6 +75,7 @@
                                             This will create a new my-project directory, download some dependencies into it and even generate the basic directories and files you'll need to get started. In other words, your new app is ready!
                                         </p>
                                     </div><!--//section-block-->
+
                                     <div id="running-your-mpphp-application"  class="section-block">
                                         <h3 class="block-title">Running your MpPHP Application</h3>
                                         
@@ -96,6 +99,7 @@
                                                 Later, when you are finished working, stop the server by pressing Ctrl+C from your terminal.
                                         </p>
                                     </div><!--//section-block-->
+
                                     <div id="storing-your-project-in-git" class="section-block">
                                         <h3 class="block-title">Storing your Project in git</h3>
                                         
@@ -115,8 +119,241 @@
                                             For more on git visit the git documentation
                                         </p>
                                     </div><!--//section-block-->
+
+                                    <div id="create-first-page" class="section-block">
+                                        <h3 class="block-title">Create your First Page in MpPHP</h3>
+                                        
+                                        <p>
+                                            Creating a new page in MpPHP is a two-step process:
+                                            <ol>
+                                                <li>
+                                                    Create a route: A route is the URL (e.g. /about) to your page and points to a controller;
+                                                </li>
+                                                <li>
+                                                    Create a controller: A controller is the PHP function you write that builds the page. 
+                                                    You take the incoming request information and use it to return a response to the browser.
+                                                </li>
+                                            </ol>
+                                        </p>
+                                    </div><!--//section-block-->
+
+                                    <div id="create-controller" class="section-block">
+                                        <h3 class="block-title">Create a Controller</h3>
+                                        
+                                        <p>
+                                            Suppose you want to create a page - /lucky/number - that generates a lucky (well, random) number and prints it. 
+                                            To do that, create a "Controller file" in the "app/http/controllers" directory and a "controller" function inside of it:
+                                        </p>
+
+                                        <p>
+                                            <img width="100%" src="../assets/images/demo/create-controller.png" alt="Create a controller">
+                                        </p>
+                                        <p>
+                                            To name a controller we use a snake case and we prefix action at the end of it.
+                                        </p>
+                                        
+                                    </div><!--//section-block-->
+
+                                    <div id="create-route" class="section-block">
+                                        <h3 class="block-title">Create a Route</h3>
+                                        
+                                        <p>
+                                            Now you need to associate this controller function with a public URL (e.g. /lucky/number) so 
+                                            that the number() function is executed when a user browses to it. 
+                                            This association is defined by creating a route in the routes/web.php file:
+                                        </p>
+                                        
+                                        <p>
+                                            <img width="100%" src="../assets/images/demo/create-route.png" alt="Create a controller">
+                                        </p>
+
+                                        <p>
+                                            That's it! If you are using PHP's built in web server, try it out by going to:
+                                        </p>
+
+                                        <p>
+                                            <code>
+                                                http://localhost:8000/lucky/number
+                                            </code>
+                                        </p>
+
+                                        <p>
+                                            If you see a lucky number being printed back to you, congratulations!
+                                        </p>
+                                    </div><!--//section-block-->
+
+                                    <div id="rendering-template" class="section-block">
+                                        <h3 class="block-title">Rendering a Template</h3>
+                                        
+                                        <p>
+                                            A PHP templating engine is the one which gives you ability to write HTML for your clients efficiently using PHP variables.
+                                        </p>
+
+                                        <p>
+                                            Originally PHP was built to be a templating engine, but yet it was never used primarily as a templating engine. 
+                                            There has been so many PHP templating engine so far in the market since PHP evolved, like Twig, Smarty, Volt, Latte 
+                                            to name a few, sadly they come bundled with OOP drama and we are trying to avoid all that So we are going to use the 
+                                            default engine but with a little tweak to make it more fun.
+                                        </p>
+
+                                        <div class="callout-block callout-info">
+                                            <div class="icon-holder">
+                                                <svg class="svg-inline--fa fa-info-circle fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg><!-- <i class="fas fa-info-circle"></i> -->
+                                            </div><!--//icon-holder-->
+                                            <div class="content">
+                                                <h4 class="callout-title">Notice</h4>
+                                                <p>
+                                                    Up until the time of this documentation I am not aware of any PHP templating engine built without OOP so if you know of any please let me know by raising an issue.
+                                                </p>
+                                            </div><!--//content-->
+                                        </div>
+
+                                        <p>
+                                            <img width="100%" src="../assets/images/demo/template-shot.png" alt="Create the temlate">
+                                        </p>
+
+                                        <p>
+                                            Template files live in the “resources/views” directory so too render 
+                                            HTML template in our application we simply create a “number.phtml”  in our “resources/views” directory.
+                                        </p>
+
+                                        <p>
+                                            Now, use the handy _view() function to render a template. Pass it a number variable so you can use it in our template.
+                                        </p>
+
+                                        <p>
+                                            <img width="100%" src="../assets/images/demo/create-controller-alt.png" alt="Call the view function">
+                                        </p>
+
+                                        <p>
+                                            The <?= number ?> syntax is used to “print” variables in PHP. 
+                                            Refresh your browser to get yournew lucky number!
+                                        </p>
+                                    </div><!--//section-block-->
+
+                                    <div id="checking-project-structure" class="section-block">
+                                        <h3 class="block-title">Checking out the Project Structure</h3>
+                                        
+                                        <p>
+                                            Just by creating our first MpPHP page we’ve managed to familiarize our selves 
+                                            with the directories we would be working with most of the time, but you still need to be formally introduce to the MpPHP directories:
+                                        </p>
+
+                                        <ul>
+                                            <li>
+                                                <strong>app/</strong>
+                                                <p>
+                                                    <i>
+                                                        The app directory holds the base code for your MpPHP application.
+                                                        If your working on the back end, this is where you will be spending most of your time.
+                                                    </i>
+                                                </p>
+                                                <ul>
+                                                    <li>
+                                                        <strong>entities/</strong>
+
+                                                        <ul>
+                                                            <li>
+                                                                <strong>models/</strong>
+                                                                <p>
+                                                                    <i>This directory contains all the model files.</i>
+                                                                </p>
+                                                            </li>
+                                                            <li>
+                                                                <strong>repositories/</strong>
+                                                                <p>
+                                                                    <i>This directory contains all the repository files.</i>
+                                                                </p>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <strong>http/</strong>
+                                                        <p>
+                                                            <i>
+                                                                The Http directory holds different middleware, and controllers.
+                                                            </i>
+                                                        </p>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <strong>bootstrap/</strong>
+                                                <p>
+                                                    <i>The bootstrap directory holds all the bootstrapping scripts used for your application.</i>
+                                                </p>
+                                            </li>
+                                            
+                                            <li>
+                                                <strong>config/</strong>
+                                                <p>
+                                                    <i>
+                                                        Contains... configuration of course!. You will configure routes, services and packages.
+                                                    </i>
+                                                </p>
+                                            </li>
+
+                                            <li>
+                                                <strong>public/</strong>
+                                                <p>
+                                                    <i>
+                                                        This is the document root for your project: you put any publicly accessible files here.
+                                                    </i>
+                                                </p>
+                                                <ul>
+                                                    <li>
+                                                        <strong>css/</strong>
+                                                        <p>
+                                                            <i>
+                                                                This holds all the css files.
+                                                            </i>
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <strong>js/</strong>
+                                                        <p>
+                                                            <i>
+                                                                This holds all the javascript files.
+                                                            </i>
+                                                        </p>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <strong>resources/</strong>
+                                                <ul>
+                                                    <li>
+                                                        <strong>views/</strong>
+                                                        <p>
+                                                            <i>
+                                                                This is where your template files live.
+                                                            </i>
+                                                        </p>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <strong>routes</strong>
+                                                <p>
+                                                    <i>
+                                                        The routes directory hold all your definition files for routing such as web.php etc.
+                                                    </i>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <strong>vendor/</strong>
+                                                <p>
+                                                    <i>
+                                                        Third-party (i.e. "vendor") libraries live here! 
+                                                        These are downloaded via the <a href="https://getcomposer.org/" title="Composer">Composer</a> package manager.
+                                                    </i>
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </div><!--//section-block-->
                                 </div>
                             </section><!--//doc-section-->
+
                         </div><!--//content-inner-->
                     </div><!--//doc-content-->
 
@@ -129,6 +366,11 @@
                                         <a class="nav-link scrollto" href="#installation" title="MpPHP Installation">Installation</a>
                                         <a class="nav-link scrollto" href="#running-your-mpphp-application" title="Running your MpPHP Application">Running your MpPHP Application</a>
                                         <a class="nav-link scrollto" href="#storing-your-project-in-git" title="Storing your Project in git">Storing your Project in git</a>
+                                        <a class="nav-link scrollto" href="#create-first-page" title="Create your First Page in MpPHP">Create your First Page in MpPHP</a>
+                                        <a class="nav-link scrollto" href="#create-controller" title="Create a controller">Create a Controller</a>
+                                        <a class="nav-link scrollto" href="#create-route" title="Create a route">Create a Route</a>
+                                        <a class="nav-link scrollto" href="#rendering-template" title="Rendering a Template">Rendering a Template</a>
+                                        <a class="nav-link scrollto" href="#checking-project-structure" title="Checking out the Project Structure">Checking out the Project Structure</a>
                                     </nav><!--//nav-->
 	                            </nav><!--//doc-menu-->
 	                        
