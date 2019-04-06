@@ -1,7 +1,6 @@
 <?php
 
-// We include our user model to have our simplified database
-// calls available to us.
+// We require our user repository to have our user logics available to us.
 require MPPHP_ROOT . 'app/entities/repositories/user.repository.php';
 
 /**
@@ -11,7 +10,7 @@ require MPPHP_ROOT . 'app/entities/repositories/user.repository.php';
  */
 function showLoginFormAction()
 {
-    return __view('auth/login');
+    return _view('auth/login');
 }
 
 /**

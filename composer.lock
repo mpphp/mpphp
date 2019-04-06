@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mpphp/router.git",
-                "reference": "ef82b2c911b7c0648318a9af21e695a8b0b71bf8"
+                "reference": "fe6095e7ab32f80041e72e0f9c0f7c7deebee9b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mpphp/router/zipball/ef82b2c911b7c0648318a9af21e695a8b0b71bf8",
-                "reference": "ef82b2c911b7c0648318a9af21e695a8b0b71bf8",
+                "url": "https://api.github.com/repos/mpphp/router/zipball/fe6095e7ab32f80041e72e0f9c0f7c7deebee9b1",
+                "reference": "fe6095e7ab32f80041e72e0f9c0f7c7deebee9b1",
                 "shasum": ""
             },
             "require": {
@@ -48,7 +48,7 @@
                 "php",
                 "procedural"
             ],
-            "time": "2019-03-26T19:54:54+00:00"
+            "time": "2019-04-06T09:58:44+00:00"
         },
         {
             "name": "mpphp/support",
@@ -56,12 +56,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mpphp/support.git",
-                "reference": "4f25b838a0b34ca49bde5819d61d4d6dba9658ec"
+                "reference": "f9c02234d024194b14e36a284d58cab9b7fbac7d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mpphp/support/zipball/4f25b838a0b34ca49bde5819d61d4d6dba9658ec",
-                "reference": "4f25b838a0b34ca49bde5819d61d4d6dba9658ec",
+                "url": "https://api.github.com/repos/mpphp/support/zipball/f9c02234d024194b14e36a284d58cab9b7fbac7d",
+                "reference": "f9c02234d024194b14e36a284d58cab9b7fbac7d",
                 "shasum": ""
             },
             "require": {
@@ -72,6 +72,7 @@
                 "files": [
                     "functions/array.php",
                     "functions/core.php",
+                    "functions/session.php",
                     "functions/string.php",
                     "functions/utils.php"
                 ]
@@ -94,7 +95,7 @@
                 "helpers",
                 "php"
             ],
-            "time": "2019-03-30T20:00:16+00:00"
+            "time": "2019-04-02T11:41:14+00:00"
         },
         {
             "name": "mpphp/view",
@@ -102,12 +103,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mpphp/veiw.git",
-                "reference": "a7c268dd5c18ba4d9771c5888faf1dace3749ade"
+                "reference": "734da681be6698c32d89c5f4b323f0758be585c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mpphp/veiw/zipball/a7c268dd5c18ba4d9771c5888faf1dace3749ade",
-                "reference": "a7c268dd5c18ba4d9771c5888faf1dace3749ade",
+                "url": "https://api.github.com/repos/mpphp/veiw/zipball/734da681be6698c32d89c5f4b323f0758be585c8",
+                "reference": "734da681be6698c32d89c5f4b323f0758be585c8",
                 "shasum": ""
             },
             "require": {
@@ -139,7 +140,7 @@
                 "procedural",
                 "view"
             ],
-            "time": "2019-03-27T13:29:43+00:00"
+            "time": "2019-04-05T23:33:29+00:00"
         }
     ],
     "packages-dev": [],

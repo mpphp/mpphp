@@ -11,8 +11,8 @@ function _env($key, $default) {
         'DB_HOST'               => '127.0.0.1',
         'DB_PORT'               => '3306',
         'DB_DATABASE'           => 'mpphp',
-        'DB_USERNAME'           => 'root',
-        'DB_PASSWORD'           => '',
+        'DB_USERNAME'           => 'tsommie',
+        'DB_PASSWORD'           => 'Nutyability1',
         'DB_SOCKET'             => ''
     ];
 

@@ -12,7 +12,7 @@ require MPPHP_ROOT . 'app/entities/models/user.model.php';
 function authenticate_user(): void
 {
     // alidate the data submited by our user
-    $result = validation([
+    $result = _validation([
         'email' => 'required|string',
         'password' => 'required|string'
     ]);
@@ -34,8 +34,8 @@ function authenticate_user(): void
 
     // If they dont match, redirect back with an error message.
     // In cases like this, it is a good idea not to let the user
-    // know what exactly went wrong in case the are tyring to gues t
-    // heir way inso we use a message that does not really specify what the problem is.
+    // know what exactly went wrong in case the are tyring to guess 
+    // their way in so we use a message that does not really specify what the problem is.
     // As you can see the error message returned if the passwords dont
     // match is the same error message sent back if a user with the
     // provided email does not exist.
@@ -92,7 +92,7 @@ function logout_user(): void
  */
 function register_new_user()
 {
-    $result = validation([
+    $result = _validation([
         'name' => 'required|string|max:255',
         'email' => 'required|string|email|unique:users',
         'password' => 'required|string|equals:password_confirmation'
@@ -100,7 +100,7 @@ function register_new_user()
 
     $validated = $result['validated'];
 
-    $user = register_new_user(
+    $user = create_new_user(
         $validated['name'],
         $validated['email'],
         $validated['password']

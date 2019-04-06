@@ -7,5 +7,5 @@
  */
 function indexAction()
 {
-    return __view('home');
+    return _view('home');
 }

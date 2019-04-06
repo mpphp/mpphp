@@ -4,7 +4,7 @@ require MPPHP_ROOT . 'app/entities/repositories/user.repository.php';
 
 function showRegistrationFormAction()
 {
-    return __view('auth/register');
+    return _view('auth/register');
 }
 
 function registerAction()
