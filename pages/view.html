@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>View - MpPHP Official Documentation</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="../assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="../assets/plugins/elegant_font/css/style.css">  
+      
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="../assets/css/styles.css">
+    
+</head> 
+
+<body class="landing-page">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="../index.html">
+                            <span aria-hidden="true" class="icon_documents_alt icon"></span>
+                            <span class="text-highlight">MpPHP</span><span class="text-bold">Docs</span>
+                        </a>
+                    </h1>
+                    
+                </div><!--//branding-->
+                
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                    <li class="breadcrumb-item active">View</li>
+                </ol>
+                
+            </div><!--//container-->
+        </header><!--//header-->
+
+        <div class="doc-wrapper">
+            <div class="container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title"><i class="icon fa fa-paper-plane"></i> View </h1>
+                    <div class="meta"><i class="far fa-clock"></i> Last updated: April 5th, 2019</div>
+                </div><!--//doc-header-->
+                <div class="doc-body row">
+                    <div class="doc-content col-md-9 col-12 order-1">
+                        <div class="content-inner">
+                            <section id="introduction" class="doc-section">
+                                <h2 class="section-title">Introduction</h2>
+                                <div class="section-block">
+                                    <p>
+                                        A view is the file that contains the code that gets printed on the browser period. 
+                                        And the MVC architecture demands that we keep our business logic away from these view files. 
+                                        Traditionally beginners i thought to make database calls or process their forms on the same file as the form:
+                                    </p>
+
+                                    <p>
+                                        <img class="img-fluid" src="../assets/images/demo/image-1.png" />
+                                    </p>
+
+                                    <p>
+                                        This would be a bad idea because now your View now has knowledge of your backend code. 
+                                        Now most people at this point would say theu write their logic in a different file and include it like so:
+                                    </p>
+
+                                    <p>
+                                        <img class="img-fluid" src="../assets/images/demo/image-2.png" />
+                                    </p>
+
+                                    <p>
+                                        Well technically, the two versions 
+                                        are the same, the view is still aware of the back end logic.
+                                    </p>
+
+                                    <p>
+                                        There are lots of third party Templating Engines out there like 
+                                        Smarty, Latte, Mustache, but most PHP frameworks come bundled 
+                                        with their own Templating engine, for example Symfony has Twig, 
+                                        Laravel has Blade and Phalcon has Volt. And MpPHP well, it just 
+                                        has a single file containing functions that mimic the important 
+                                        features of a Templating Engine 
+                                        like Inheritance and Sections/Blocks that we like to call VIEW.
+                                    </p>
+
+                                    <div id="defining-layout"  class="section-block">
+                                        <h3 class="block-title">Defining A Layout</h3>
+                                        
+                                        <p>
+                                            Two of the primary benefits of using a templating engine are 
+                                            template inheritance and sections. To get started, let's take a 
+                                            look at a simple example. First, we will examine a "master" page 
+                                            layout. Since most web applications maintain the same general 
+                                            layout across various pages, 
+                                            it's convenient to define this layout as a single Blade view:
+                                        </p>
+
+                                        <p>
+                                            <img class="img-fluid" src="../assets/images/demo/image-3.png" />
+                                        </p>
+
+                                        <p>
+                                            As you can see, this file contains typical HTML mark-up. However, 
+                                            take note of the _view__nest() and the _view__include() functions. The _view__include function, as the name implies, includes a template, while the _view__nest() 
+                                            function is used to display the contents of a given section.
+                                        </p>
+
+                                        <p>
+                                            Now that we have defined a layout for our application, 
+                                            let's define a child page that inherits the layout.
+                                        </p>
+                                    </div><!--//section-block-->
+
+                                    <div id="extending-layout"  class="section-block">
+                                        <h3 class="block-title">Extending A Layout</h3>
+                                        
+                                        <p>
+                                            When defining a child vtemplate, use the _view__extends() 
+                                            function to specify which layout the child template should "inherit". Templates which extend a layout may inject content into the parent template by  wrapping its content in a function with the same name passed into it's parents _view__nest() function. 
+                                            Remember, as seen in the example above, the contents of these 
+                                            sections will be displayed in the layout _view__nest('content'):
+                                        </p>
+
+                                        <p>
+                                            <img class="img-fluid" src="../assets/images/demo/image-4.png" />
+                                        </p>
+                                    </div><!--//section-block-->
+
+                                    <div class="callout-block callout-info">
+                                        <div class="icon-holder">
+                                            <svg class="svg-inline--fa fa-info-circle fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg><!-- <i class="fas fa-info-circle"></i> -->
+                                        </div><!--//icon-holder-->
+                                        <div class="content">
+                                            <h4 class="callout-title">Notice</h4>
+                                            <p>
+                                                From this section down, we would be talking about best 
+                                                practices for using PHP in a view or a template file.
+                                            </p>
+                                        </div><!--//content-->
+                                    </div>
+
+                                    <div id="displaying-data"  class="section-block">
+                                        <h3 class="block-title">Displaying Data</h3>
+                                        
+                                        <p>
+                                            To display a PHP value to the browser, we would use `echo` or `print` 
+                                            but if the only thing your doing withing a PHP opening an closing tag 
+                                            is an `echo` or `print` you can use the shorthand version like so:
+                                        </p>
+
+                                        <p>
+                                            <img class="img-fluid" src="../assets/images/demo/image-5.png" />
+                                        </p>
+
+                                        <p>
+                                            Much simpler than dont you think?
+                                        </p>
+                                    </div><!--//section-block-->
+
+                                    <div id="control-structures"  class="section-block">
+                                        <h3 class="block-title">Control Structures</h3>
+                                        
+                                        <p>
+                                            It is common for young developers to mix their view with business logic in a way that makes it impossible for a front end developer who has little knowledge of PHP to work with their projects, 
+                                            for example it is comon to find a view that has the following code:
+                                        </p>
+
+                                        <p>
+                                            <img class="img-fluid" src="../assets/images/demo/image-6.png" />
+                                        </p>
+
+                                        <p>
+                                            If your working on a school project with your friends and your 
+                                            job is at the back end of things, i guess we can all agree the above could be alot for the person handling the front. A cleaner way to get 
+                                            this do would be to drop out of PHP as soon as we don't need it:
+                                        </p>
+
+                                        <p>
+                                            <img class="img-fluid" src="../assets/images/demo/image-7.png" />
+                                        </p>
+
+                                        <p>
+                                            This would be easier for any front end personel to work on your project without having to worry about  PHP, I mean it's there 
+                                            but they can easily be ignored compared to the previous version.
+                                        </p>
+
+                                        <p>
+                                            This step would work for both Control structures and logical expressions likewise.
+                                        </p>
+                                    </div><!--//section-block-->
+                                </div>
+                            </section><!--//doc-section-->
+
+                        </div><!--//content-inner-->
+                    </div><!--//doc-content-->
+
+                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+                        <div id="doc-nav" class="doc-nav">
+	                        
+	                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+	                                <a class="nav-link scrollto" href="#introduction" title="Introduction">Introduction</a>
+                                    <nav class="doc-sub-menu nav flex-column">
+                                        <a class="nav-link scrollto" href="#defining-layout" title="Defining A Layout">Defining A Layout</a>
+                                        <a class="nav-link scrollto" href="#extending-layout" title="Extending A Layout">Extending A Layout</a>
+                                        <a class="nav-link scrollto" href="#displaying-data" title="Displaying Data">Displaying Data</a>
+                                        <a class="nav-link scrollto" href="#control-structures" title="Control Structures">Control Structures</a>
+                                    </nav><!--//nav-->
+	                            </nav><!--//doc-menu-->
+	                        
+                        </div>
+                    </div><!--//doc-sidebar-->
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+        
+        
+    </div><!--//page-wrapper-->
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+            <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
+            
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+     
+    <!-- Main Javascript -->          
+    <script type="text/javascript" src="../assets/plugins/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/plugins/prism/prism.js"></script>    
+    <script type="text/javascript" src="../assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>      
+    <script type="text/javascript" src="../assets/plugins/stickyfill/dist/stickyfill.min.js"></script>                                                             
+    <script type="text/javascript" src="../assets/js/main.js"></script>
+    
+</body>
+</html> 
+
