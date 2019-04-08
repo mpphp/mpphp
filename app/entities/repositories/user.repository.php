@@ -31,7 +31,7 @@ function authenticate_user(): void
 
     // Compare the password of the user returned from the data base 
     // with the password submitted by the user trying to login
-    $compare_password = $user['password'] !== $validated['password'];
+    $compare_password = bcrypt_hasher_check($validated['password'], $user['password']);
 
     // If they dont match, redirect back with an error message.
     // In cases like this, it is a good idea not to let the user
@@ -79,7 +79,8 @@ function logout_user(): void
     $params = session_get_cookie_params();
     
     // Delete the actual cookie. 
-    setcookie(session_name(),'', time() - 42000, $params["path"], $params["domain"], $params["secure"], $params["httponly"]);
+    setcookie(session_name(),'', time() - 42000, $params["path"], $params["domain"], 
+        $params["secure"], $params["httponly"]);
     
     // Destroy session 
     session_destroy();
@@ -105,12 +106,19 @@ function register_new_user()
     // Get the validated data.
     $validated = $result['validated'];
 
+    // _dump(bcrypt_hasher_make($validated['password']), true);
+
     // Create the user
     $user = create_new_user(
         $validated['name'],
         $validated['email'],
-        $validated['password']
+        bcrypt_hasher_make($validated['password']) // Alway hash your users password
     );
+
+    // Redirect back if the user was not created.
+    _redirect_back_if($user === false, ['errors' => [
+        'Unable to register user at the moment.'
+    ]]);
 
     // log the user in
     login_user($user);
