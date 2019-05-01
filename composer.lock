@@ -48,12 +48,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mpphp/router.git",
-                "reference": "fe6095e7ab32f80041e72e0f9c0f7c7deebee9b1"
+                "reference": "1fbb5ab17c1380c0c255b54873b1a23351bf6663"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mpphp/router/zipball/fe6095e7ab32f80041e72e0f9c0f7c7deebee9b1",
-                "reference": "fe6095e7ab32f80041e72e0f9c0f7c7deebee9b1",
+                "url": "https://api.github.com/repos/mpphp/router/zipball/1fbb5ab17c1380c0c255b54873b1a23351bf6663",
+                "reference": "1fbb5ab17c1380c0c255b54873b1a23351bf6663",
                 "shasum": ""
             },
             "require": {
@@ -84,7 +84,7 @@
                 "php",
                 "procedural"
             ],
-            "time": "2019-04-06T09:58:44+00:00"
+            "time": "2019-05-01T10:45:21+00:00"
         },
         {
             "name": "mpphp/support",
