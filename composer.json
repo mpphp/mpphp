@@ -14,15 +14,21 @@
     "minimum-stability": "dev",
     "require": {
         "php": "^7.1",
-        "mpphp/support": "dev-master",
-        "mpphp/router": "dev-master",
-        "mpphp/view": "dev-master",
-        "mpphp/database": "dev-master",
-        "mpphp/validation": "dev-master"
+        "mpphp/support": "~v1.0.0-alpha",
+        "mpphp/view": "~v1.0.0-alpha",
+        "mpphp/database": "~v1.0.0-alpha",
+        "mpphp/router": "~v1.0.0-alpha",
+        "mpphp/validation": "~v1.0.0-alpha"
     },
     "autoload": {
         "files": [
-            ".env.php"
+            "env.php"
+        ]
+    },
+    "prefer-stable": true,
+    "scripts": {
+        "post-root-package-install": [
+            "@php -r \"file_exists('env.php') || copy('env.example', 'env.php');\""
         ]
     }
 }
