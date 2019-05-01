@@ -4,11 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e099a4b2c7f488ce568e56b548f3b119",
+    "content-hash": "3fb77128ec5da743fb1316a36e35aab8",
     "packages": [
         {
             "name": "mpphp/database",
-            "version": "dev-master",
+            "version": "v1.0.0-alpha",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mpphp/database.git",
@@ -44,20 +44,21 @@
         },
         {
             "name": "mpphp/router",
-            "version": "dev-master",
+            "version": "v1.0.0-alpha",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mpphp/router.git",
-                "reference": "fe6095e7ab32f80041e72e0f9c0f7c7deebee9b1"
+                "reference": "378736389ac6abd900b8475647cd81c5cebfb5bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mpphp/router/zipball/fe6095e7ab32f80041e72e0f9c0f7c7deebee9b1",
-                "reference": "fe6095e7ab32f80041e72e0f9c0f7c7deebee9b1",
+                "url": "https://api.github.com/repos/mpphp/router/zipball/378736389ac6abd900b8475647cd81c5cebfb5bb",
+                "reference": "378736389ac6abd900b8475647cd81c5cebfb5bb",
                 "shasum": ""
             },
             "require": {
-                "mpphp/support": "dev-master",
+                "mpphp/support": "~v1.0.0-alpha",
+                "mpphp/view": "~v1.0.0-alpha",
                 "php": "^7.1"
             },
             "type": "library",
@@ -84,11 +85,11 @@
                 "php",
                 "procedural"
             ],
-            "time": "2019-04-06T09:58:44+00:00"
+            "time": "2019-05-01T17:57:51+00:00"
         },
         {
             "name": "mpphp/support",
-            "version": "dev-master",
+            "version": "v1.0.0-alpha",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mpphp/support.git",
@@ -136,7 +137,7 @@
         },
         {
             "name": "mpphp/validation",
-            "version": "dev-master",
+            "version": "v1.0.0-alpha",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mpphp/validation.git",
@@ -169,20 +170,20 @@
         },
         {
             "name": "mpphp/view",
-            "version": "dev-master",
+            "version": "v1.0.0-alpha",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mpphp/veiw.git",
-                "reference": "326c3f03e0d3a27c2c96745d56c8d20fbd576bf2"
+                "reference": "042315aed0600b24a32af94a49f771f9f3bee466"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mpphp/veiw/zipball/326c3f03e0d3a27c2c96745d56c8d20fbd576bf2",
-                "reference": "326c3f03e0d3a27c2c96745d56c8d20fbd576bf2",
+                "url": "https://api.github.com/repos/mpphp/veiw/zipball/042315aed0600b24a32af94a49f771f9f3bee466",
+                "reference": "042315aed0600b24a32af94a49f771f9f3bee466",
                 "shasum": ""
             },
             "require": {
-                "mpphp/support": "dev-master",
+                "mpphp/support": "~v1.0.0-alpha",
                 "php": "^7.1"
             },
             "type": "library",
@@ -210,19 +211,13 @@
                 "procedural",
                 "view"
             ],
-            "time": "2019-04-07T18:19:23+00:00"
+            "time": "2019-05-01T17:48:05+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "mpphp/support": 20,
-        "mpphp/router": 20,
-        "mpphp/view": 20,
-        "mpphp/database": 20,
-        "mpphp/validation": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

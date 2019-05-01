@@ -10,7 +10,7 @@ require MPPHP_ROOT . 'app/entities/repositories/user.repository.php';
  */
 function showLoginFormAction()
 {
-    return _view('auth/login');
+    _view('auth/login');
 }
 
 /**
