@@ -25,6 +25,7 @@
             "env.php"
         ]
     },
+    "prefer-stable": true,
     "scripts": {
         "post-root-package-install": [
             "@php -r \"file_exists('env.php') || copy('env.example', 'env.php');\""
