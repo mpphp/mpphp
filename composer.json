@@ -11,7 +11,6 @@
             "email": "anitchec.dev@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
         "php": "^7.1",
         "mpphp/support": "~v1.0.0-alpha",
@@ -25,6 +24,12 @@
             "env.php"
         ]
     },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
         "post-root-package-install": [
