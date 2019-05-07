@@ -4,6 +4,7 @@ composer.lock
 /public/bower_components/
 /.vscode
 env.php
+/.idea
 _site
 .sass-cache
 .jekyll-metadata
