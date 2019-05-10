@@ -7,5 +7,5 @@
  */
 function indexAction()
 {
-    _view('home');
+    _view('home.phtml');
 }

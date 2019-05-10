@@ -1,6 +1,8 @@
-<!--@extends('layouts/app.phtml')-->
+<?php include_once locked__view__extends('layouts/app.phtml') ?>
 
-<!--@section('content') -->
+<?php function content($vars) { 
+            extract($vars);
+        ?>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -8,20 +10,20 @@
                     <div class="card-header">Register</div>
 
                     <div class="card-body">
-                        <form method="POST" action="<!--@route('/register') -->">
+                        <form method="POST" action="<?php echo _e('/register') ?>">
                            
                             <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
 
                                 <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control<!--@error('name')--> is-invalid<!--@enderror-->"
-                                    name="name" value="<!--@old('name')-->" required autofocus>
+                                    <input id="name" type="text" class="form-control<?php if (_error('name')) { $message = _error('name'); ?> is-invalid<?php } ?>"
+                                    name="name" value="<?php echo _e(_old('name'))?>" required autofocus>
 
-                                    <!--@error('name') -->
+                                    <?php if (_error('name')) { $message = _error('name'); ?>
                                     <span class="invalid-feedback" role="alert">
-                                        <strong><!--{{ $message }}--></strong>
+                                        <strong><?php echo _e($message) ?></strong>
                                     </span>
-                                    <!--@enderror -->
+                                    <?php } ?>
                                 </div>
                             </div>
 
@@ -29,14 +31,14 @@
                                 <label for="email" class="col-md-4 col-form-label text-md-right">Email Address</label>
 
                                 <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control<!--@error('email')--> is-invalid<!--@enderror-->"
-                                    name="email" value="<!--@old('email')-->" required>
+                                    <input id="email" type="email" class="form-control<?php if (_error('email')) { $message = _error('email'); ?> is-invalid<?php } ?>"
+                                    name="email" value="<?php echo _e(_old('email'))?>" required>
 
-                                    <!--@error('email') -->
+                                    <?php if (_error('email')) { $message = _error('email'); ?>
                                     <span class="invalid-feedback" role="alert">
-                                        <strong><!--{{ $message }}--></strong>
+                                        <strong><?php echo _e($message) ?></strong>
                                     </span>
-                                    <!--@enderror -->
+                                    <?php } ?>
                                 </div>
                             </div>
 
@@ -44,14 +46,14 @@
                                 <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
 
                                 <div class="col-md-6">
-                                    <input id="password" type="password" class="form-control<!--@error('password')--> is-invalid<!--@enderror-->"
+                                    <input id="password" type="password" class="form-control<?php if (_error('password')) { $message = _error('password'); ?> is-invalid<?php } ?>"
                                     name="password" required>
 
-                                    <!--@error('password') -->
+                                    <?php if (_error('password')) { $message = _error('password'); ?>
                                     <span class="invalid-feedback" role="alert">
-                                        <strong><!--{{ $message }}--></strong>
+                                        <strong><?php echo _e($message) ?></strong>
                                     </span>
-                                    <!--@enderror -->
+                                    <?php } ?>
                                 </div>
                             </div>
 
@@ -76,4 +78,4 @@
             </div>
         </div>
     </div>
-<!--@endsection -->
+<?php } ?>

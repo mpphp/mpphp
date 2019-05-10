@@ -18,7 +18,7 @@ function find_user_by_email(string $email)
     $user = db__read('users', // Read from the 'users' table.
         [ // The outer array houses as many clauses that is required.
             // So a mysql's "WHERE email = {$email}
-            // will be writen like so
+            // will be written like so
             ['email', '=', $email] // Simply find the user with a matching email.
         ]
     ); // Asign the result to a $user variable.
@@ -55,7 +55,7 @@ function create_new_user(string $name, string $email, string $password)
         'name' => $name, 
         'email' => $email, 
         'password' => $password
-    ], 'users'); // Asign the result to a $user variable.
+    ], 'users'); // Assign the result to a $user variable.
 
     // Return $user;
     return $user;

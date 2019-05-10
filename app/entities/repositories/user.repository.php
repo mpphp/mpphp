@@ -11,7 +11,7 @@ require MPPHP_ROOT . 'app/entities/models/user.model.php';
  */
 function authenticate_user(): void
 {
-    // alidate the data submited by our user
+    // Validate the data submitted by our user
     $result = _validation([
         'email' => 'required|string',
         'password' => 'required|string'
@@ -40,7 +40,7 @@ function authenticate_user(): void
     // As you can see the error message returned if the passwords dont
     // match is the same error message sent back if a user with the
     // provided email does not exist.
-    _redirect_back_if($compare_password, [
+    _redirect_back_else($compare_password, [
             'errors' => ['Please provide a valid email and password']
         ]
     );
@@ -96,7 +96,7 @@ function logout_user(): void
  */
 function register_new_user()
 {
-    // alidate the data submited by our user
+    // Validate the data submitted by our user
     $result = _validation([
         'name' => 'required|string|max:255',
         'email' => 'required|string|email|unique:users',
@@ -106,13 +106,11 @@ function register_new_user()
     // Get the validated data.
     $validated = $result['validated'];
 
-    // _dump(bcrypt_hasher_make($validated['password']), true);
-
     // Create the user
     $user = create_new_user(
         $validated['name'],
         $validated['email'],
-        bcrypt_hasher_make($validated['password']) // Alway hash your users password
+        bcrypt_hasher_make($validated['password']) // Warning! Always hash your users password.
     );
 
     // Redirect back if the user was not created.

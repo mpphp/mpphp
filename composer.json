@@ -13,17 +13,19 @@
     ],
     "require": {
         "php": "^7.1",
-        "mpphp/support": "~v1.0.0-alpha",
-        "mpphp/view": "~v1.0.0-alpha",
-        "mpphp/database": "~v1.0.0-alpha",
-        "mpphp/router": "~v1.0.0-alpha",
-        "mpphp/validation": "~v1.0.0-alpha"
+        "mpphp/core": "dev-master"
     },
     "autoload": {
         "files": [
             "env.php"
         ]
     },
+    "repositories":  [
+        {
+            "type": "path",
+            "url": "/home/tsommie/Documents/Apps/mpphp/core"
+        }
+    ],
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",

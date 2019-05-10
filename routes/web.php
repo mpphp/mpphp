@@ -13,10 +13,10 @@
 return [
     'web' => [
         // Route "/index"
-        'index' => 'welcome',
+        'index' => ['view' => ['welcome.phtml']],
 
         // Route "/page-not-found"
-        'page-not-found' => '404',
+        'page-not-found' => ['view' => ['404.phtml']],
 
         // Route "/home"
         'home' => [

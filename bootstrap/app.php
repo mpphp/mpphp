@@ -15,6 +15,7 @@ $app = mpphp_application(
     // Register Configuration files.
     [
         require MPPHP_ROOT . 'config/app.php',
+        require MPPHP_ROOT . 'config/view.php',
         //
     ],
 

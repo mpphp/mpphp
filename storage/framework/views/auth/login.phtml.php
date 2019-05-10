@@ -1,6 +1,8 @@
-<!--@extends('layouts/app.phtml')-->
+<?php include_once locked__view__extends('layouts/app.phtml') ?>
 
-<!--@section('content') -->
+<?php function content($vars) { 
+            extract($vars);
+        ?>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -8,20 +10,20 @@
                     <div class="card-header">Login</div>
 
                     <div class="card-body">
-                        <form method="POST" action="<!--@route('/login')-->">
+                        <form method="POST" action="<?php echo _e('/login') ?>">
 
                             <div class="form-group row">
                                 <label for="email" class="col-md-4 col-form-label text-md-right">Email Address</label>
 
                                 <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control<!--@error('email')--> is-invalid<!--@enderror-->"
-                                        name="email" value="<!--@old('email')-->" required>
+                                    <input id="email" type="email" class="form-control<?php if (_error('email')) { $message = _error('email'); ?> is-invalid<?php } ?>"
+                                        name="email" value="<?php echo _e(_old('email'))?>" required>
 
-                                    <!--@error('email') -->
+                                    <?php if (_error('email')) { $message = _error('email'); ?>
                                         <span class="invalid-feedback" role="alert">
-                                            <strong><!--{{ $message }}--></strong>
+                                            <strong><?php echo _e($message) ?></strong>
                                         </span>
-                                    <!--@enderror -->
+                                    <?php } ?>
                                 </div>
                             </div>
 
@@ -62,4 +64,4 @@
             </div>
         </div>
     </div>
-<!--@endsection -->
+<?php } ?>

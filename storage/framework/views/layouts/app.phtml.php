@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title><!--{{ $app['configs']['app']['name'] }}--></title>
+        <title><?php echo _e($app['configs']['app']['name']) ?></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -12,13 +12,13 @@
         <!-- Place favicon.ico in the root directory -->
 
         <!-- Scripts -->
-        <script src="<!--@asset('js/app.js') -->" defer></script>
+        <script src="<?php echo _asset('js/app.js') ?>" defer></script>
 
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
-        <link rel="stylesheet" href="<!--@asset('css/app.css') -->">
+        <link rel="stylesheet" href="<?php echo _asset('css/app.css') ?>">
 
     </head>
 
@@ -30,8 +30,8 @@
 
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="<!--@route('/') -->">
-                    <!--{{ $app['configs']['app']['name'] }}-->
+                <a class="navbar-brand" href="<?php echo _e('/') ?>">
+                    <?php echo _e($app['configs']['app']['name']) ?>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -41,61 +41,61 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="<!--@route('/home') -->">Home</a>
+                            <a class="nav-link" href="<?php echo _e('/home') ?>">Home</a>
                         </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
 
-                        <!--@auth -->
+                        <?php if (_auth_check()) { ?>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <!--{{ _auth_user()['name']}}--> <span class="caret"></span>
+                                    <?php echo _e( _auth_user()['name']) ?> <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="<!--@route('/logout') -->"
+                                    <a class="dropdown-item" href="<?php echo _e('/logout') ?>"
                                         onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
                                         Logout
                                     </a>
 
-                                    <form id="logout-form" action="<!--@route('/logout') -->" method="POST" style="display: none;">
+                                    <form id="logout-form" action="<?php echo _e('/logout') ?>" method="POST" style="display: none;">
                                        
                                     </form>
                                 </div>
                             </li>
-                        <!--@endauth -->
+                        <?php } ?>
 
-                        <!--@guest -->
+                        <?php if (! _auth_check()) { ?>
                             <!-- Authentication Links -->
                             <li class="nav-item">
-                                <a class="nav-link" href="<!--@route('/login') -->">Login</a>
+                                <a class="nav-link" href="<?php echo _e('/login') ?>">Login</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="<!--@route('/register') -->">Register</a>
+                                <a class="nav-link" href="<?php echo _e('/register') ?>">Register</a>
                             </li>
-                        <!--@endguest -->
+                        <?php } ?>
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <!--@if ($errors) -->
+        <?php if ($errors) { ?>
             <div class="alert alert-danger" role="alert">
                 <div class="container">
                     <ol>
-                        <!--@php foreach($errors as $error) : @endphp-->
-                            <li><!--{{ $error }}--></li>
-                        <!--@php endforeach; @endphp-->
+                        <?php  foreach($errors as $error) :  ?>
+                            <li><?php echo _e($error) ?></li>
+                        <?php  endforeach;  ?>
                     </ol>
                 </div>
             </div>
-        <!--@endif -->
+        <?php } ?>
 
         <main class="py-4">
-            <!--@yield('content')-->
+            <?php call_user_func('content', $vars); ?>
         </main>
 
     </body>

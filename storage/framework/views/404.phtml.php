@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title><!--{{ $app['configs']['app']['name'] }}--></title>
+        <title><?php echo _e($app['configs']['app']['name']) ?></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -79,24 +79,24 @@
         <div class="flex-center position-ref full-height">
 
             <div class="top-right links">
-                <a href="<!--{{ _route('/home') }}-->">Home</a>
+                <a href="<?php echo _e(_route('/home')) ?>">Home</a>
 
-                <!--@auth -->
-                    <a href="<!--{{ _route('/logout') }}-->"
+                <?php if (_auth_check()) { ?>
+                    <a href="<?php echo _e(_route('/logout')) ?>"
                        onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
                         Logout
                     </a>
 
-                    <form id="logout-form" action="<!--{{ _route('/logout') }}-->" method="POST" style="display: none;">
+                    <form id="logout-form" action="<?php echo _e(_route('/logout')) ?>" method="POST" style="display: none;">
                     </form>
-                <!--@endauth -->
+                <?php } ?>
 
-                <!--@guest -->
-                    <a href="<!--{{ _route('/login') }}-->">Login</a>
+                <?php if (! _auth_check()) { ?>
+                    <a href="<?php echo _e(_route('/login')) ?>">Login</a>
 
-                    <a href="<!--{{ _route('/register') }}-->">Register</a>
-                <!--@endauth -->
+                    <a href="<?php echo _e(_route('/register')) ?>">Register</a>
+                <?php } ?>
             </div>
             
             <div class="content">

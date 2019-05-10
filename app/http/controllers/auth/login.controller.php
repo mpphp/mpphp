@@ -1,6 +1,6 @@
 <?php
 
-// We require our user repository to have our user logics available to us.
+// We require our user repository to have our user logic available to us.
 require MPPHP_ROOT . 'app/entities/repositories/user.repository.php';
 
 /**
@@ -10,7 +10,7 @@ require MPPHP_ROOT . 'app/entities/repositories/user.repository.php';
  */
 function showLoginFormAction()
 {
-    _view('auth/login');
+    _view('auth/login.phtml');
 }
 
 /**

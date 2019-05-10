@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title><!--{{ $app['configs']['app']['name'] }}--></title>
+        <title><?php echo _e($app['configs']['app']['name']) ?></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -77,33 +77,65 @@
 
         <!-- Add your site or application content here -->
         <div class="flex-center position-ref full-height">
-
+            
             <div class="top-right links">
-                <a href="<!--{{ _route('/home') }}-->">Home</a>
+                <a href="<?php echo _e('/home') ?>">Home</a>
 
-                <!--@auth -->
-                    <a href="<!--{{ _route('/logout') }}-->"
-                       onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">
+                <?php if (_auth_check()) { ?>
+                    <a href="<?php echo _e('/logout') ?>"
+                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
                         Logout
                     </a>
 
-                    <form id="logout-form" action="<!--{{ _route('/logout') }}-->" method="POST" style="display: none;">
+                    <form id="logout-form" action="<?php echo _e('/logout') ?>" method="POST" style="display: none;">
                     </form>
-                <!--@endauth -->
+                <?php } ?>
 
-                <!--@guest -->
-                    <a href="<!--{{ _route('/login') }}-->">Login</a>
+                <?php if (! _auth_check()) { ?>
+                    <a href="<?php echo _e('/login') ?>">Login</a>
 
-                    <a href="<!--{{ _route('/register') }}-->">Register</a>
-                <!--@endauth -->
+                    <a href="<?php echo _e('/register') ?>">Register</a>
+                <?php } ?>
             </div>
-            
+
             <div class="content">
+                <?php  $data = [1,2,3,4,5,6]  ?>
+
+                <?php 
+            $loop = [
+                'index'       => 0, // The index of the current loop iteration (starts at 0).
+                'iteration'   => 1, // The current loop iteration (starts at 1).
+                'even'        => false, // Whether this is an even iteration through the loop.
+                'odd'         => false  // Whether this is an odd iteration through the loop.
+            ];
+
+            foreach ($data as $number) : 
+                if($loop["index"] % 2 == 0){
+                    $loop["even"] = true;
+                    $loop["odd"] = false; 
+                } else{ 
+                    $loop["even"] = false;
+                    $loop["odd"] = true;  
+                }?>
+                    <?php if (is_bool($number === 3) && $number === 3) continue; ?>
+                    <?php echo _e($number) ?>
+                <?php 
+                $loop['index'] += 1;
+                $loop['iteration'] += 1;
+            endforeach;
+        ?>
+
                 <div class="title m-b-md">
-                    Page Not Found
+                    MPPHP
                 </div>
-                <p>Sorry, but the page you were trying to view does not exist.</p>
+
+                <div class="links">
+                    <a href="https://mpphp.github.io/mpphp/">Docs</a>
+                    <a href="#">News</a>
+                    <a href="#">Blog</a>
+                    <a href="https://mpphp.github.io/mpphp">GitHub</a>
+                </div>
             </div>
         </div>
 

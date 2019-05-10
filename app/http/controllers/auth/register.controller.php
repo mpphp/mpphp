@@ -9,7 +9,7 @@ require MPPHP_ROOT . 'app/entities/repositories/user.repository.php';
  */
 function showRegistrationFormAction()
 {
-    _view('auth/register');
+    _view('auth/register.phtml');
 }
 
 /**
