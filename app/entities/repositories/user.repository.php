@@ -40,7 +40,7 @@ function authenticate_user(): void
     // As you can see the error message returned if the passwords dont
     // match is the same error message sent back if a user with the
     // provided email does not exist.
-    _redirect_back_if($compare_password, [
+    _redirect_back_if(!$compare_password, [
             'errors' => ['Please provide a valid email and password']
         ]
     );
@@ -112,7 +112,7 @@ function register_new_user()
     $user = create_new_user(
         $validated['name'],
         $validated['email'],
-        bcrypt_hasher_make($validated['password']) // Alway hash your users password
+        bcrypt_hasher_make($validated['password']) // Always hash your users password
     );
 
     // Redirect back if the user was not created.
