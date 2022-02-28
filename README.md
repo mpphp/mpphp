@@ -11,7 +11,7 @@ Micro Procedural PHP Framework
 [![composer.lock](https://poser.pugx.org/mpphp/mpphp/composerlock)](https://packagist.org/packages/mpphp/mpphp)
 
 
-This project was an inspiration I got from explaining really simple concepts to a newbie using complex examples, at a point I had to put myself in his shoes and ask myself..”would I understand anything coming out of my mouth when I was like him?” It didn't take long for me to realize that I was onto something what could pass for a Framework and I haven’t even pulled out the big guns yet.
+This project was an inspiration I got while explaining really simple concepts to a newbie using complex examples, at a point I had to put myself in his shoes and ask myself, ”would I understand anything coming out of my mouth when I was like him?” It didn't take long for me to realize that I was onto something what could pass for a Framework and I haven’t even pulled out the big guns yet.
 
 In a nut shell, Micro Procedural PHP (MPPHP) is a very simple illustration of a PHP framework using just procedural code. Considering the beginners, `Procedural Code` is pretty much the way you’ve been coding (assuming you've not been introduced to OOP), which is defining all your functions in a file (e.g. includes.php) and then import it into the environment you wish to make use of those functions. While `Object Oriented Programming` involves grouping those functions according to their responsibilities (to avoid stepping all over your feet) in to an `Object` or a `Class`, now whether your objects are all in the same file is entirely up to you but as much as you would love to exercise your autocratic power, you may want to nourish your soul with some holy words from the book of `Best Practices` if you want your code to play well with others.
 
@@ -21,4 +21,5 @@ Did i mention that the fun part of a Framework is having over 60% of the coding 
 
 And for the pros reading this and thinking “MVC, Middleware...with procedural code? This dude must be on that ssshhhhh”. Well, why don't you let me amuse you for a bit.
 
-# Documentation coming real soon...
+# Documentation
+Documentation is available but still under major construction at https://mpphp.github.io/mpphp/index.html
